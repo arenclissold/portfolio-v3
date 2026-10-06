@@ -13,7 +13,7 @@ Open `dist/index.html` directly in your browser, or serve `dist/` with any stati
 ## Language content
 
 - Edit English content in `dist/en/index.html` and Japanese content in `dist/ja/index.html` independently. The Japanese version starts as a translation and can be adapted for Japanese recruiting.
-- After English changes, refresh the root English fallback with `scripts/sync_root.py`. This preserves automatic language selection on `/`. The root's canonical points to `/en/`.
+- Write the HTML files directly. When changing English content, update both `dist/en/index.html` and the English fallback in `dist/index.html`. Keep the root's `language-detection.js` script tag; its canonical points to `/en/`. There are no generation scripts or build commands.
 - Shared styles and behavior live in `dist/styles.css` and `dist/script.js`. `dist/language-detection.js` runs only on `/`, before the body renders. Manual choices use localStorage key `portfolio-language` and take precedence on later root visits.
 - Explicit `/en/` and `/ja/` links always show that language regardless of stored/browser preference. The top-of-page language links preserve the current section when JavaScript is enabled. Missing/blocked storage does not prevent switching.
 - Maintain matching career facts, contact links and section IDs; wording and emphasis may differ. Each page has its own title, description, canonical and language alternatives.
